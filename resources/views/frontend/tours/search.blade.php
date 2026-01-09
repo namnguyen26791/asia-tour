@@ -38,4 +38,26 @@
             <article itemscope itemtype="https://schema.org/TouristTrip">
                 <h2 itemprop="name">
                     <a href="{{ route('tours.show',$tour->slug) }}">
-                        {
+                        {{ $tour->title }}
+                    </a>
+                </h2>
+
+                <p itemprop="description">
+                    {{ Str::limit($tour->short_description,160) }}
+                </p>
+
+                <p>
+                    <strong>{{ $tour->duration_days }} Days</strong>
+                    | From {{ number_format($tour->price_from) }} USD
+                </p>
+            </article>
+        @endforeach
+    </section>
+
+    {{ $tours->links() }}
+
+@else
+    <p>No tours found. Try different filters.</p>
+@endif
+
+@endsection
