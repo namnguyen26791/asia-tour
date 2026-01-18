@@ -16783,7 +16783,7 @@
                 </div>
             </div>
         </footer>
-        <div class="modal-container close-display"></div>
+        <!-- <div class="modal-container close-display"></div>
         <div id="contact-modal" class="modal close-display">
             <div class="loading-modal close-display">
                 <img src="#" data-img="https://d2lwt6tidfiof0.cloudfront.net/images/loading-modal.gif">
@@ -17667,7 +17667,7 @@
                 <i class="icon-font icon-call"></i>
                 <span>Call Us</span>
             </a>
-        </div>
+        </div> -->
         <div id="google_translate_element2" style="display: none;"></div>
         <script type="text/javascript" src="/js/jquery.min.js"></script>
         <script type="text/javascript" src="/js/intlTelInput.min.js" defer></script>

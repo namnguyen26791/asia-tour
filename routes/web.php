@@ -8,7 +8,8 @@ use App\Http\Controllers\Frontend\{
     ExperienceController,
     BookingController,
     WishlistController,
-    AuthController
+    AuthController,
+    PreDepartureController
 };
 
 Route::get('/', function () {
@@ -17,6 +18,9 @@ Route::get('/', function () {
 
 /* HOME */
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+/* PRE DEPARTURE */
+Route::get('/pre-departure', [PreDepartureController::class, 'index'])->name('home');
 
 /* TOURS */
 Route::get('/tours', [TourController::class, 'index'])->name('tours.index');

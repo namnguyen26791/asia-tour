@@ -8,9 +8,9 @@ use App\Models\Experience;
 
 class ExperienceController extends Controller
 {
-     public function show($slug)
+    public function show($slug)
     {
-        $experience = Experience::where('slug',$slug)
+        $experience = Experience::where('slug', $slug)
             ->with('tours')->firstOrFail();
 
         return view('frontend.experiences.show', compact('experience'));
