@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.home', [
+        return view('frontend.asia', [
             'featuredTours' => Tour::where('is_featured',1)->limit(6)->get(),
             'destinations'  => Destination::all()
         ]);
