@@ -16,7 +16,12 @@ use App\Http\Controllers\Backend\{
     HomeController as AdminHomeController,
     TourController as AdminTourController,
     GroupTourController,
-    AllTourController
+    AllTourController,
+    SuppliersController,
+    FAQController,
+    BlogController,
+    ExperiencesController,
+    ReviewController
 };
 
 Route::get('/', function () {
