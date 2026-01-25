@@ -8,8 +8,15 @@ use App\Http\Controllers\Frontend\{
     ExperienceController,
     BookingController,
     WishlistController,
-    AuthController,
     PreDepartureController
+};
+
+use App\Http\Controllers\Backend\{
+    AuthController,
+    HomeController as AdminHomeController,
+    TourController as AdminTourController,
+    GroupTourController,
+    AllTourController
 };
 
 Route::get('/', function () {
@@ -47,3 +54,23 @@ Route::middleware('auth')->group(function () {
     Route::post('/wishlist/add/{tour}', [WishlistController::class, 'add'])->name('wishlist.add');
     Route::delete('/wishlist/remove/{tour}', [WishlistController::class, 'remove'])->name('wishlist.remove');
 });
+
+
+// Backend
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/login', [AuthController::class, 'login']);
+
+    Route::get('/home', [AllTourController::class, 'index']);
+    Route::get('/tours/create', [AdminTourController::class, 'create']);
+
+    Route::group(['prefix' => 'group-tours'], function () {
+        Route::get('/index', [GroupTourController::class, 'index']);
+        Route::get('/create', [GroupTourController::class, 'create']);
+    });
+
+    Route::group(['prefix' => 'all-tours'], function () {
+        Route::get('/index', [AllTourController::class, 'index']);
+        Route::get('/create', [AllTourController::class, 'create']);
+    });
+});
+
